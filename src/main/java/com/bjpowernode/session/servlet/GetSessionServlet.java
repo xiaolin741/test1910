@@ -9,6 +9,7 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/getsession")
 public class GetSessionServlet extends HttpServlet {
+    String name;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = (String) request.getSession().getAttribute("url");
         response.getWriter().write(url == null ? "no session" : url);
